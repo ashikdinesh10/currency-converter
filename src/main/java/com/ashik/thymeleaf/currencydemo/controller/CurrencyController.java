@@ -94,10 +94,10 @@ public class CurrencyController {
 	public ResponseEntity<CurrencyResponse> getCurrencyResponse(@RequestBody @Valid CurrencyRequest currencyRequest) {
 		
 		String currencyName = currencyRequest.getCurrencyName();
-		double currencyValue = currencyService.searchBy(currencyName).getCurrencyValue();
-		if(currencyRequest.getCurrencyName() == null || currencyRequest.getCurrencyName().equals("")) {
+		if(currencyName == null || currencyName.equals("")) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 		}
+		double currencyValue = currencyService.searchBy(currencyName.trim()).getCurrencyValue();
 		try {
 			return ResponseEntity.ok().body(new CurrencyResponse(currencyValue, LocalTime.now()));
 		} catch(CurrencyResponseException e) {
