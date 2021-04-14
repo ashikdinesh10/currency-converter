@@ -1,5 +1,7 @@
 Implemented Currency Converter using Spring Boot as Backend and Thymeleaf in the frontend
 
+Frontend code can be found in src/main/resources
+
 Used Spring Data JPA as ORM for interacting with MySql Database
 
 USD($) is currently used as the base currency type
