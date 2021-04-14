@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Employee Directory</title>
+</head>
+
+<body>
+
+<div class="container">
+
+	<h3>Available Currencies</h3>
+	<hr>
+	
+	<!-- Add a search form -->
+
+	<form action="#" th:action="@{/currencies/search}"
+		  method="GET" class="form-inline">	
+
+		<!-- Add a button -->
+		<a class="btn btn-primary btn-sm mb-3">
+			Base Currency(USD)
+		</a>
+	
+		<input type="submit"
+			   name="value"
+			   placeholder="Enter Value to be coverted"
+			   class="form-control-sm ml-5 mr-2 mb-3" />
+
+		<input type="search"
+			   name="currencyType"
+			   placeholder="Currency Type"
+			   class="form-control-sm mr-2 mb-3" />
+
+		<button type="submit"
+				class="btn btn-success btn-sm mb-3">Search</button>
+				
+		<button type="submit"
+				class="btn btn-success btn-sm mb-3">Send Currency</button>
+							   
+	</form>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Currency Type</th>
+				<th>Currency Value</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempCurrency : ${currencies}">
+			
+				<td th:text="${tempCurrency.currencyType}" />	
+				<td th:text="${tempCurrency.currencyValue}" />	
+					
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+	
+</body>
+</html>
+
+
+
