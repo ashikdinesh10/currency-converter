@@ -12,7 +12,6 @@ public interface CurrencyRepository extends JpaRepository<Currency, Integer> {
 	public List<Currency> findAllByOrderByLastNameAsc();
 
 	//  method to search currency by type
-	public Currency findByNameContainsAllIgnoreCase(
-									String currencyName);
+	public Currency findByNameContainsAllIgnoreCase(String currencyName);
 	
 }
