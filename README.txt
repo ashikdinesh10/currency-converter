@@ -1,3 +1,5 @@
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=ashikdinesh10&repo=currency-converter&theme=dark)](https://github.com/ashikdinesh10/currency-converter)
+
 Implemented Currency Converter using Spring Boot as Backend and Thymeleaf in the frontend by following MVCS design pattern.
 
 Frontend code can be found in src/main/resources.
